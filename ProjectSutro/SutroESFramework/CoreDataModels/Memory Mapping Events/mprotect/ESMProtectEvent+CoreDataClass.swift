@@ -16,6 +16,18 @@ public class ESMProtectEvent: NSManagedObject {
         case protection
         case address
         case size
+        case hex_address
+        case kb_size
+        case flags
+    }
+    
+    public var flags: [String] {
+        get {
+            return (try? JSONDecoder().decode([String].self, from: flagsData)) ?? []
+        }
+        set {
+            flagsData = try! JSONEncoder().encode(newValue)
+        }
     }
     
     // MARK: - Custom Core Data initilizer for ESMProtectEvent
@@ -28,6 +40,10 @@ public class ESMProtectEvent: NSManagedObject {
         self.protection = event.protection
         self.address = event.address
         self.size = event.size
+        
+        self.hex_address = event.hex_address
+        self.kb_size = event.kb_size
+        self.flags = event.flags
     }
 }
 
@@ -37,5 +53,11 @@ extension ESMProtectEvent: Encodable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         
         try container.encode(protection, forKey: .protection)
+        try container.encode(address, forKey: .address)
+        try container.encode(size, forKey: .size)
+        
+        try container.encode(hex_address, forKey: .hex_address)
+        try container.encode(kb_size, forKey: .kb_size)
+        try container.encode(flags, forKey: .flags)
     }
 }

@@ -69,6 +69,13 @@ struct EventSpecificViewsProvider {
         case _ where message.event.mmap != nil:
             self.labelView = AnyView(MMAPEventLabelView(message: message))
             self.metadataView = AnyView(SystemMMAPMetadataView(esSystemEvent: message))
+        case _ where message.event.mprotect != nil:
+            self.labelView = AnyView(
+                IntelligentEventLabelView(message: message)
+            )
+            self.metadataView = AnyView(
+                SystemMProtectMetadataView(esSystemEvent: message)
+            )
             
             
         // MARK: - File System events

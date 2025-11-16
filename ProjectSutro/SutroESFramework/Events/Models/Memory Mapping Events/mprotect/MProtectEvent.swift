@@ -8,6 +8,31 @@
 import Foundation
 
 
+private func decodeProtectionFlags(_ protection: Int32) -> [String] {
+    var flags: [String] = []
+    
+    
+    if protection & VM_PROT_NONE != 0 { flags.append("VM_PROT_NONE") }
+    if protection & VM_PROT_READ != 0 { flags.append("VM_PROT_READ") }
+    if protection & VM_PROT_READ != 0 { flags.append("VM_PROT_WRITE") }
+    if protection & VM_PROT_READ != 0 { flags.append("VM_PROT_EXECUTE") }
+    if protection & VM_PROT_READ != 0 { flags.append("VM_PROT_DEFAULT") }
+    if protection & VM_PROT_READ != 0 { flags.append("VM_PROT_RORW_TP") }
+    if protection & VM_PROT_READ != 0 { flags.append("VM_PROT_NO_CHANGE_LEGACY") }
+    if protection & VM_PROT_READ != 0 { flags.append("VM_PROT_NO_CHANGE") }
+    if protection & VM_PROT_READ != 0 { flags.append("VM_PROT_COPY") }
+    if protection & VM_PROT_READ != 0 { flags.append("VM_PROT_WANTS_COPY") }
+    if protection & VM_PROT_READ != 0 { flags.append("VM_PROT_IS_MASK") }
+    if protection & VM_PROT_READ != 0 { flags.append("VM_PROT_STRIP_READ") }
+    if protection & VM_PROT_READ != 0 { flags.append("VM_PROT_EXECUTE_ONLY") }
+    if protection & VM_PROT_READ != 0 { flags.append("VM_PROT_TPRO") }
+    if protection & VM_PROT_READ != 0 { flags.append("VM_PROT_ALLEXEC") }
+    
+    
+    return flags.isEmpty ? ["NONE"] : flags
+}
+
+
 /// @brief Control protection of pages
 /// A type for an event that indicates a change to protection of memory-mapped pages.
 /// https://developer.apple.com/documentation/endpointsecurity/es_event_mprotect_t
@@ -16,6 +41,11 @@ public struct MProtectEvent: Identifiable, Codable, Hashable {
     
     public var protection: Int32
     public var address, size: Int64
+    
+    /// @note Mac Monitor enrichment
+    public var hex_address: String
+    public var kb_size: Int64
+    public var flags: [String] = []
     
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
@@ -31,5 +61,11 @@ public struct MProtectEvent: Identifiable, Codable, Hashable {
         self.protection = event.protection
         self.address = Int64(event.address)
         self.size = Int64(event.size)
+        
+        self.hex_address = ProcessHelpers
+            .toHex(target: String(event.address))
+        self.kb_size = Int64(ProcessHelpers
+            .sizeFromHexNormalized(size: Double(event.size)))
+        self.flags = decodeProtectionFlags(event.protection)
     }
 }

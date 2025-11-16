@@ -20,6 +20,10 @@ extension ESMProtectEvent {
     @NSManaged public var protection: Int32
     @NSManaged public var address: Int64
     @NSManaged public var size: Int64
+    
+    @NSManaged public var hex_address: String
+    @NSManaged public var kb_size: Int64
+    @NSManaged public var flagsData: Data
 
 }
 

@@ -136,6 +136,7 @@
 		28823F312EC82CAE000B7F5C /* MProtectEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823F302EC82CA7000B7F5C /* MProtectEvent.swift */; };
 		28823F342EC82F28000B7F5C /* ESMProtectEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823F322EC82F28000B7F5C /* ESMProtectEvent+CoreDataClass.swift */; };
 		28823F352EC82F28000B7F5C /* ESMProtectEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823F332EC82F28000B7F5C /* ESMProtectEvent+CoreDataProperties.swift */; };
+		28823F3B2EC839B8000B7F5C /* SystemMProtectMetadataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823F3A2EC839B8000B7F5C /* SystemMProtectMetadataView.swift */; };
 		2885A33A29EF99CE001C0420 /* TargetPathEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2885A33929EF99CE001C0420 /* TargetPathEvents.swift */; };
 		28893E2D29A97D3A00960966 /* SystemProcessGroupTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28893E2C29A97D3A00960966 /* SystemProcessGroupTableView.swift */; };
 		288AB3962919BCEF00D221AD /* MutedPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288AB3952919BCEF00D221AD /* MutedPath.swift */; };
@@ -574,6 +575,7 @@
 		28823F302EC82CA7000B7F5C /* MProtectEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MProtectEvent.swift; sourceTree = "<group>"; };
 		28823F322EC82F28000B7F5C /* ESMProtectEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ESMProtectEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
 		28823F332EC82F28000B7F5C /* ESMProtectEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ESMProtectEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		28823F3A2EC839B8000B7F5C /* SystemMProtectMetadataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemMProtectMetadataView.swift; sourceTree = "<group>"; };
 		2885A33929EF99CE001C0420 /* TargetPathEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetPathEvents.swift; sourceTree = "<group>"; };
 		2889013C28F776E000C1F4A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		28893E2C29A97D3A00960966 /* SystemProcessGroupTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemProcessGroupTableView.swift; sourceTree = "<group>"; };
@@ -1564,6 +1566,22 @@
 			children = (
 				28823F322EC82F28000B7F5C /* ESMProtectEvent+CoreDataClass.swift */,
 				28823F332EC82F28000B7F5C /* ESMProtectEvent+CoreDataProperties.swift */,
+			);
+			path = mprotect;
+			sourceTree = "<group>";
+		};
+		28823F382EC83984000B7F5C /* mmap */ = {
+			isa = PBXGroup;
+			children = (
+				28CEF0FA29776D1D003057D2 /* SystemMMAPMetadataView.swift */,
+			);
+			path = mmap;
+			sourceTree = "<group>";
+		};
+		28823F392EC83989000B7F5C /* mprotect */ = {
+			isa = PBXGroup;
+			children = (
+				28823F3A2EC839B8000B7F5C /* SystemMProtectMetadataView.swift */,
 			);
 			path = mprotect;
 			sourceTree = "<group>";
@@ -2755,7 +2773,8 @@
 		CAC48AF72E25CFBF00260C5F /* Memory Mapping */ = {
 			isa = PBXGroup;
 			children = (
-				28CEF0FA29776D1D003057D2 /* SystemMMAPMetadataView.swift */,
+				28823F392EC83989000B7F5C /* mprotect */,
+				28823F382EC83984000B7F5C /* mmap */,
 			);
 			path = "Memory Mapping";
 			sourceTree = "<group>";
@@ -3468,6 +3487,7 @@
 				28B9A94329DC9A74006619FF /* SystemProcessSocketMetadataView.swift in Sources */,
 				28B9A93D29DC8EC4006619FF /* SystemRemoteThreadCreateMetadataView.swift in Sources */,
 				28CEF0F129776CAF003057D2 /* SystemOpenSSHLoginMetadataView.swift in Sources */,
+				28823F3B2EC839B8000B7F5C /* SystemMProtectMetadataView.swift in Sources */,
 				28CEF0EB29776C54003057D2 /* SystemXProtectRemediateMetadataView.swift in Sources */,
 				287EAAA32A42C79E007E00C4 /* SystemOpenDirectoryCreateUserMetadataView.swift in Sources */,
 				28CEF0FB29776D1D003057D2 /* SystemMMAPMetadataView.swift in Sources */,
