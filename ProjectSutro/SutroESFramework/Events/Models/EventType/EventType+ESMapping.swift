@@ -134,6 +134,23 @@ extension EventType {
                 context,
                 context // Target path
             )
+        case ES_EVENT_TYPE_NOTIFY_MPROTECT:
+            let event = MProtectEvent(from: rawMessage)
+            let pathPointer = rawMessage.pointee.process.pointee.executable.pointee.path
+            let initPath: String = pathPointer.length > 0 ? String(
+                cString: pathPointer.data
+            ) : ""
+            let flagsString = event.flags.joined(separator: "|").replacingOccurrences(
+                of: "VM_PROT_",
+                with: ""
+            )
+            let context = "(\(flagsString))(\(event.kb_size) kb) → \(initPath)"
+            return (
+                .mprotect(event),
+                "ES_EVENT_TYPE_NOTIFY_MPROTECT",
+                context,
+                nil // @note: `target_path` does not make sense in this context.
+            )
             
             
             // MARK: - File System events

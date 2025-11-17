@@ -12,6 +12,7 @@ import CryptoKit
 
 
 public class ProcessHelpers {
+    // MARK: Supported scripting interpreters
     static let supportedInterpreters: Set<String> = [
         "bash",
         "osascript",
@@ -97,6 +98,17 @@ public class ProcessHelpers {
         }
         
         return fds
+    }
+    
+    // MARK: - Address to hex
+    public static func toHex(target: String) -> String {
+        return String(format: "0x%llx", target)
+    }
+    
+    // MARK: - Normalized size
+    public static func sizeFromHexNormalized(size: Double) -> Int {
+        let kb = Double(size) / 1024.0
+        return Int(kb)
     }
     
     // MARK: - Event to JSON
