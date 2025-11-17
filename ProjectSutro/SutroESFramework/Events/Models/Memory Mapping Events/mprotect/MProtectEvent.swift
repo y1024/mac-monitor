@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 /// @note see `man mprotect`
 private func decodeProtectionFlags(_ protection: Int32) -> [String] {
     /// No permissions at all.
@@ -22,7 +23,6 @@ private func decodeProtectionFlags(_ protection: Int32) -> [String] {
     
     return flags
 }
-
 
 /// @brief Control protection of pages
 /// A type for an event that indicates a change to protection of memory-mapped pages.
