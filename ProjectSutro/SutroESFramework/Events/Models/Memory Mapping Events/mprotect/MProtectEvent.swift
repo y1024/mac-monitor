@@ -7,27 +7,18 @@
 
 import Foundation
 
-
+/// @note see `man mprotect`
 private func decodeProtectionFlags(_ protection: Int32) -> [String] {
+    /// No permissions at all.
     guard protection != VM_PROT_NONE else { return ["VM_PROT_NONE"] }
     
     var flags: [String] = []
-    /// `VM_PROT_DEFAULT = (VM_PROT_READ | VM_PROT_WRITE)` — it's a convenience constant
-    // if protection & VM_PROT_DEFAULT != 0 { flags.append("VM_PROT_DEFAULT") }
-    if protection & VM_PROT_NONE != 0 { flags.append("VM_PROT_NONE") }
+    /// The pages can be read.
     if protection & VM_PROT_READ != 0 { flags.append("VM_PROT_READ") }
+    /// The pages can be written.
     if protection & VM_PROT_WRITE != 0 { flags.append("VM_PROT_WRITE") }
+    /// The pages can be executed.
     if protection & VM_PROT_EXECUTE != 0 { flags.append("VM_PROT_EXECUTE") }
-    if protection & VM_PROT_RORW_TP != 0 { flags.append("VM_PROT_RORW_TP") }
-    if protection & VM_PROT_NO_CHANGE_LEGACY != 0 { flags.append("VM_PROT_NO_CHANGE_LEGACY") }
-    if protection & VM_PROT_NO_CHANGE != 0 { flags.append("VM_PROT_NO_CHANGE") }
-    if protection & VM_PROT_COPY != 0 { flags.append("VM_PROT_COPY") }
-    if protection & VM_PROT_WANTS_COPY != 0 { flags.append("VM_PROT_WANTS_COPY") }
-    if protection & VM_PROT_IS_MASK != 0 { flags.append("VM_PROT_IS_MASK") }
-    if protection & VM_PROT_STRIP_READ != 0 { flags.append("VM_PROT_STRIP_READ") }
-    if protection & VM_PROT_EXECUTE_ONLY != 0 { flags.append("VM_PROT_EXECUTE_ONLY") }
-    if protection & VM_PROT_TPRO != 0 { flags.append("VM_PROT_TPRO") }
-    if protection & VM_PROT_ALLEXEC != 0 { flags.append("VM_PROT_ALLEXEC") }
     
     return flags
 }

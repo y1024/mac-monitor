@@ -60,16 +60,15 @@ struct SystemMProtectMetadataView: View {
                         GroupBox {
                             VStack(alignment: .leading) {
                                 Label("**VM Protection Flags**", systemImage: "doc.plaintext")
+                                    .padding(.bottom, 5)
                                     .font(.title3)
                                 
-                                List(event.flags, id: \.self) { flag in
-                                    Text(flag)
-                                        .monospaced()
+                                ForEach(event.flags, id: \.self) { flag in
+                                    GroupBox {
+                                        Text("\u{2022} \(flag)")
+                                            .monospaced()
+                                    }
                                 }
-                                .frame(
-                                    minHeight: CGFloat(35 * event.flags.count),
-                                    maxHeight: 150
-                                )
                             }.frame(maxWidth: .infinity, alignment: .topLeading)
                         }
                     }
