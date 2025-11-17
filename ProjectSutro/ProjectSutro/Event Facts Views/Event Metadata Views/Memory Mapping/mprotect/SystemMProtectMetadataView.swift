@@ -44,12 +44,33 @@ struct SystemMProtectMetadataView: View {
                         
                         Text("\u{2022} **Address:**")
                         GroupBox {
-                            Text("`\(String(address))`")
+                            Text(event.hex_address)
+                                .monospaced()
                         }
                         
                         Text("\u{2022} **Size:**")
                         GroupBox {
-                            Text("`\(size)`")
+                            Text("\(event.kb_size) kb")
+                                .monospaced()
+                        }
+                    }
+                    
+                    // MARK: Protection flags
+                    if !event.flags.isEmpty {
+                        GroupBox {
+                            VStack(alignment: .leading) {
+                                Label("**VM Protection Flags**", systemImage: "doc.plaintext")
+                                    .font(.title3)
+                                
+                                List(event.flags, id: \.self) { flag in
+                                    Text(flag)
+                                        .monospaced()
+                                }
+                                .frame(
+                                    minHeight: CGFloat(35 * event.flags.count),
+                                    maxHeight: 150
+                                )
+                            }.frame(maxWidth: .infinity, alignment: .topLeading)
                         }
                     }
                 }.frame(maxWidth: .infinity, alignment: .leading)
@@ -77,3 +98,4 @@ struct SystemMProtectMetadataView: View {
         }
     }
 }
+
