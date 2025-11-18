@@ -182,6 +182,8 @@ public func eventStringToImage(from eventString: String) -> String {
         return "questionmark.diamond"
     case "ES_EVENT_TYPE_NOTIFY_AUTHORIZATION_JUDGEMENT":
         return "arrowshape.right.fill"
+    case "ES_EVENT_TYPE_NOTIFY_GETEXTATTR":
+        return "text.viewfinder"
     
     // MARK: - macOS 15+ events
     case "ES_EVENT_TYPE_NOTIFY_TCC_MODIFY":

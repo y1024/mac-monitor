@@ -139,6 +139,10 @@
 		28823F3B2EC839B8000B7F5C /* SystemMProtectMetadataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823F3A2EC839B8000B7F5C /* SystemMProtectMetadataView.swift */; };
 		28823F3E2ECC2A3D000B7F5C /* SystemSetExtattrMetadataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823F3D2ECC2A2C000B7F5C /* SystemSetExtattrMetadataView.swift */; };
 		28823F412ECC2A87000B7F5C /* SystemDeleteExtattrMetadataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823F402ECC2A79000B7F5C /* SystemDeleteExtattrMetadataView.swift */; };
+		28823F452ECC2BAE000B7F5C /* XattrGetEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823F442ECC2BA9000B7F5C /* XattrGetEvent.swift */; };
+		28823F482ECC2CB3000B7F5C /* ESXattrGetEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823F462ECC2CB3000B7F5C /* ESXattrGetEvent+CoreDataClass.swift */; };
+		28823F492ECC2CB3000B7F5C /* ESXattrGetEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823F472ECC2CB3000B7F5C /* ESXattrGetEvent+CoreDataProperties.swift */; };
+		28823F502ECC3400000B7F5C /* SystemGetExtattrMetadataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823F4F2ECC3400000B7F5C /* SystemGetExtattrMetadataView.swift */; };
 		2885A33A29EF99CE001C0420 /* TargetPathEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2885A33929EF99CE001C0420 /* TargetPathEvents.swift */; };
 		28893E2D29A97D3A00960966 /* SystemProcessGroupTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28893E2C29A97D3A00960966 /* SystemProcessGroupTableView.swift */; };
 		288AB3962919BCEF00D221AD /* MutedPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288AB3952919BCEF00D221AD /* MutedPath.swift */; };
@@ -579,6 +583,10 @@
 		28823F3A2EC839B8000B7F5C /* SystemMProtectMetadataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemMProtectMetadataView.swift; sourceTree = "<group>"; };
 		28823F3D2ECC2A2C000B7F5C /* SystemSetExtattrMetadataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSetExtattrMetadataView.swift; sourceTree = "<group>"; };
 		28823F402ECC2A79000B7F5C /* SystemDeleteExtattrMetadataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemDeleteExtattrMetadataView.swift; sourceTree = "<group>"; };
+		28823F442ECC2BA9000B7F5C /* XattrGetEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XattrGetEvent.swift; sourceTree = "<group>"; };
+		28823F462ECC2CB3000B7F5C /* ESXattrGetEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ESXattrGetEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
+		28823F472ECC2CB3000B7F5C /* ESXattrGetEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ESXattrGetEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		28823F4F2ECC3400000B7F5C /* SystemGetExtattrMetadataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemGetExtattrMetadataView.swift; sourceTree = "<group>"; };
 		2885A33929EF99CE001C0420 /* TargetPathEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetPathEvents.swift; sourceTree = "<group>"; };
 		2889013C28F776E000C1F4A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		28893E2C29A97D3A00960966 /* SystemProcessGroupTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemProcessGroupTableView.swift; sourceTree = "<group>"; };
@@ -1612,6 +1620,58 @@
 			path = setmode;
 			sourceTree = "<group>";
 		};
+		28823F432ECC2B83000B7F5C /* getextattr */ = {
+			isa = PBXGroup;
+			children = (
+				28823F442ECC2BA9000B7F5C /* XattrGetEvent.swift */,
+			);
+			path = getextattr;
+			sourceTree = "<group>";
+		};
+		28823F4A2ECC2CDA000B7F5C /* getextattr */ = {
+			isa = PBXGroup;
+			children = (
+				28823F462ECC2CB3000B7F5C /* ESXattrGetEvent+CoreDataClass.swift */,
+				28823F472ECC2CB3000B7F5C /* ESXattrGetEvent+CoreDataProperties.swift */,
+			);
+			path = getextattr;
+			sourceTree = "<group>";
+		};
+		28823F4B2ECC2CE6000B7F5C /* setextattr */ = {
+			isa = PBXGroup;
+			children = (
+				2852BBBA29DB852500AA833C /* ESXattrSetEvent+CoreDataClass.swift */,
+				2852BBBB29DB852500AA833C /* ESXattrSetEvent+CoreDataProperties.swift */,
+			);
+			path = setextattr;
+			sourceTree = "<group>";
+		};
+		28823F4C2ECC2CF0000B7F5C /* deleteextattr */ = {
+			isa = PBXGroup;
+			children = (
+				28EC62CF292444C800EAC8AD /* ESXattrDeleteEvent+CoreDataClass.swift */,
+				28EC62D0292444C800EAC8AD /* ESXattrDeleteEvent+CoreDataProperties.swift */,
+			);
+			path = deleteextattr;
+			sourceTree = "<group>";
+		};
+		28823F4D2ECC2CF9000B7F5C /* setmode */ = {
+			isa = PBXGroup;
+			children = (
+				CA59364C2E8B07E3008A115D /* ESSetModeEvent+CoreDataClass.swift */,
+				CA59364D2E8B07E3008A115D /* ESSetModeEvent+CoreDataProperties.swift */,
+			);
+			path = setmode;
+			sourceTree = "<group>";
+		};
+		28823F4E2ECC33EC000B7F5C /* getextattr */ = {
+			isa = PBXGroup;
+			children = (
+				28823F4F2ECC3400000B7F5C /* SystemGetExtattrMetadataView.swift */,
+			);
+			path = getextattr;
+			sourceTree = "<group>";
+		};
 		28A169CE2DA4E56600CA630B /* Artifacts */ = {
 			isa = PBXGroup;
 			children = (
@@ -1761,12 +1821,10 @@
 		28B343742D862E1C004127E8 /* File Metadata Events */ = {
 			isa = PBXGroup;
 			children = (
-				28EC62CF292444C800EAC8AD /* ESXattrDeleteEvent+CoreDataClass.swift */,
-				28EC62D0292444C800EAC8AD /* ESXattrDeleteEvent+CoreDataProperties.swift */,
-				2852BBBA29DB852500AA833C /* ESXattrSetEvent+CoreDataClass.swift */,
-				2852BBBB29DB852500AA833C /* ESXattrSetEvent+CoreDataProperties.swift */,
-				CA59364C2E8B07E3008A115D /* ESSetModeEvent+CoreDataClass.swift */,
-				CA59364D2E8B07E3008A115D /* ESSetModeEvent+CoreDataProperties.swift */,
+				28823F4D2ECC2CF9000B7F5C /* setmode */,
+				28823F4C2ECC2CF0000B7F5C /* deleteextattr */,
+				28823F4B2ECC2CE6000B7F5C /* setextattr */,
+				28823F4A2ECC2CDA000B7F5C /* getextattr */,
 			);
 			path = "File Metadata Events";
 			sourceTree = "<group>";
@@ -2072,6 +2130,7 @@
 		28B343972D863C63004127E8 /* File Metadata Events */ = {
 			isa = PBXGroup;
 			children = (
+				28823F432ECC2B83000B7F5C /* getextattr */,
 				CA9C06242E907D7600A0D5C8 /* setextattr */,
 				CA9C06232E907D6F00A0D5C8 /* deleteextattr */,
 				CA9C06222E907D6100A0D5C8 /* setmode */,
@@ -2830,6 +2889,7 @@
 		CAC48AFA2E25DBCD00260C5F /* File Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				28823F4E2ECC33EC000B7F5C /* getextattr */,
 				28823F422ECC2AAB000B7F5C /* setmode */,
 				28823F3F2ECC2A6E000B7F5C /* deleteextattr */,
 				28823F3C2ECC29EF000B7F5C /* setextattr */,
@@ -3336,6 +3396,8 @@
 				28A169D02DA4E57000CA630B /* Thread.swift in Sources */,
 				28EC62D9292446B700EAC8AD /* ESLaunchItemAddEvent+CoreDataClass.swift in Sources */,
 				28A608A62D9BA06D00962337 /* EventType.swift in Sources */,
+				28823F482ECC2CB3000B7F5C /* ESXattrGetEvent+CoreDataClass.swift in Sources */,
+				28823F492ECC2CB3000B7F5C /* ESXattrGetEvent+CoreDataProperties.swift in Sources */,
 				28ADAC412DCC7464000DB4D2 /* NewPath.swift in Sources */,
 				281BBE7B2A391949009B94F8 /* ESODGroupAddEvent+CoreDataClass.swift in Sources */,
 				2852BBBD29DB852500AA833C /* ESXattrSetEvent+CoreDataProperties.swift in Sources */,
@@ -3403,6 +3465,7 @@
 				28235282296F5A4200A31F99 /* ESMessage+CoreDataProperties.swift in Sources */,
 				CAE9E4542E4FF883001143C2 /* ESTCCModifyEvent+CoreDataProperties.swift in Sources */,
 				2852BB8929D89AEB00AA833C /* FileOpenEvent.swift in Sources */,
+				28823F452ECC2BAE000B7F5C /* XattrGetEvent.swift in Sources */,
 				2852BB9929D948D000AA833C /* ESLinkEvent+CoreDataProperties.swift in Sources */,
 				2852BB8129D83C6100AA833C /* ESFileDeleteEvent+CoreDataProperties.swift in Sources */,
 				28B9A92B29DBDE2F006619FF /* ESProcessCheckEvent+CoreDataProperties.swift in Sources */,
@@ -3565,6 +3628,7 @@
 				CA59365C2E8B1920008A115D /* SystemPTYGrantMetadataView.swift in Sources */,
 				28B49C5229DCA1C200ADDABA /* SystemGetTaskMetadataView.swift in Sources */,
 				284BAED12A4CE079007F1193 /* SystemOpenDirectoryCreateGroupMetadataView.swift in Sources */,
+				28823F502ECC3400000B7F5C /* SystemGetExtattrMetadataView.swift in Sources */,
 				28CEF0FD29776D31003057D2 /* SystemProcExitMetadataView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

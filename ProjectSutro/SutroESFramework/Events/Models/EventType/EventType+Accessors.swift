@@ -120,6 +120,11 @@ extension EventType {
         if case .setextattr(let e) = self { return e }
         return nil
     }
+    
+    var getextattr: XattrGetEvent? {
+        if case .getextattr(let e) = self { return e }
+        return nil
+    }
 
     var deleteextattr: XattrDeleteEvent? {
         if case .deleteextattr(let e) = self { return e }

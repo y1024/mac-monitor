@@ -35,6 +35,7 @@ extension ESEventType {
     @NSManaged public var dup: ESFDDuplicateEvent?
     
     @NSManaged public var setextattr: ESXattrSetEvent?
+    @NSManaged public var getextattr: ESXattrGetEvent?
     @NSManaged public var deleteextattr: ESXattrDeleteEvent?
     @NSManaged public var setmode: ESSetModeEvent?
     

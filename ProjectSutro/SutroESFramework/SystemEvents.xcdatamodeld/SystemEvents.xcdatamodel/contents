@@ -63,6 +63,7 @@
         <relationship name="fork" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ESProcessForkEvent"/>
         <relationship name="gatekeeper_user_override" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ESGatekeeperUserOverrideEvent"/>
         <relationship name="get_task" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ESGetTaskEvent"/>
+        <relationship name="getextattr" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ESXattrGetEvent"/>
         <relationship name="iokit_open" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ESIOKitOpenEvent"/>
         <relationship name="link" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ESLinkEvent"/>
         <relationship name="login_login" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ESLoginLoginEvent"/>
@@ -599,6 +600,11 @@
         <relationship name="file" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ESFile"/>
     </entity>
     <entity name="ESXattrDeleteEvent" representedClassName="ESXattrDeleteEvent" syncable="YES">
+        <attribute name="extattr" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="target" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ESFile"/>
+    </entity>
+    <entity name="ESXattrGetEvent" representedClassName="ESXattrGetEvent" syncable="YES">
         <attribute name="extattr" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="target" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ESFile"/>

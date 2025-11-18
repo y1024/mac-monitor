@@ -18,10 +18,14 @@ public struct MuteSet {
     
     /// Mac Monitor's default mute set
     public static var `default`: MuteSet {
-        // This directory path is calculated at runtime.
+        // The paths for these directories is calculated at runtime
         let caches_dir = String(
             URL(fileURLWithPath: NSHomeDirectory())
                 .appendingPathComponent("Library/Caches").path
+        )
+        let homeLibraryBiomeSteams = String(
+            URL(fileURLWithPath: NSHomeDirectory())
+                .appendingPathComponent("Library/Biome/streams").path
         )
         
         // MARK: - Event-Specific Mute Rules
@@ -31,7 +35,8 @@ public struct MuteSet {
                 "/usr/libexec/logd",
                 "/System/Library/PrivateFrameworks/PackageKit.framework/Versions/A/Resources/system_installd",
                 "/System/Library/Frameworks/AddressBook.framework/Versions/A/Helpers/AddressBookManager.app/Contents/MacOS/AddressBookManager",
-                "/usr/libexec/mobileassetd"
+                "/usr/libexec/mobileassetd",
+                "/usr/libexec/biomesyncd"
             ]),
             (eventType: ES_EVENT_TYPE_NOTIFY_CLOSE, muteType: ES_MUTE_PATH_TYPE_LITERAL, paths: [
                 "/usr/libexec/runningboardd",
@@ -161,6 +166,16 @@ public struct MuteSet {
             ]),
             (eventType: ES_EVENT_TYPE_NOTIFY_CREATE, muteType: ES_MUTE_PATH_TYPE_PREFIX, paths: [
                 "/System/Library/PrivateFrameworks/StreamingExtractor.framework"
+            ]),
+            (eventType: ES_EVENT_TYPE_NOTIFY_GETEXTATTR, muteType: ES_MUTE_PATH_TYPE_LITERAL, paths: [
+                "/usr/libexec/runningboardd",
+                "/usr/libexec/containermanagerd",
+                "/System/Library/CoreServices/TimeMachine/backupd"
+            ]),
+            (eventType: ES_EVENT_TYPE_NOTIFY_GETEXTATTR, muteType: ES_MUTE_PATH_TYPE_PREFIX, paths: [
+                "/Library/SystemExtensions/",
+                "/System/Library/PrivateFrameworks/",
+                homeLibraryBiomeSteams
             ]),
             (eventType: ES_EVENT_TYPE_NOTIFY_SETMODE, muteType: ES_MUTE_PATH_TYPE_PREFIX, paths: [
                 "/System/Library/PrivateFrameworks/StreamingExtractor.framework"

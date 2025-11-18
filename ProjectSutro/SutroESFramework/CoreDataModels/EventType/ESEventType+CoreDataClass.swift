@@ -46,6 +46,7 @@ public class ESEventType: NSManagedObject {
         
         /// File metadata events
         case setextattr
+        case getextattr
         case deleteextattr
         case setmode
         
@@ -236,6 +237,11 @@ public class ESEventType: NSManagedObject {
             // MARK: File Metadata events
         case .setextattr(_):
             self.setextattr = ESXattrSetEvent(
+                from: message,
+                insertIntoManagedObjectContext: context
+            )
+        case .getextattr(_):
+            self.getextattr = ESXattrGetEvent(
                 from: message,
                 insertIntoManagedObjectContext: context
             )
@@ -473,6 +479,7 @@ extension ESEventType: Encodable {
         
         // MARK: File Metadata events
         try container.encodeIfPresent(setextattr, forKey: .setextattr)
+        try container.encodeIfPresent(getextattr, forKey: .getextattr)
         try container.encodeIfPresent(deleteextattr, forKey: .deleteextattr)
         try container.encodeIfPresent(setmode, forKey: .setmode)
         

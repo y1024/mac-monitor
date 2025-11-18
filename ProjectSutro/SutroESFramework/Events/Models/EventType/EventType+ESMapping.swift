@@ -275,6 +275,16 @@ extension EventType {
                 context,
                 tgtPath
             )
+        case ES_EVENT_TYPE_NOTIFY_GETEXTATTR:
+            let event = XattrGetEvent(from: rawMessage)
+            let tgtPath: String = event.target.path
+            let context = "[\(event.extattr)] \(tgtPath)"
+            return (
+                .getextattr(event),
+                "ES_EVENT_TYPE_NOTIFY_GETEXTATTR",
+                context,
+                tgtPath
+            )
         case ES_EVENT_TYPE_NOTIFY_DELETEEXTATTR:
             let event = XattrDeleteEvent(from: rawMessage)
             let tgtPath: String = event.target.path
