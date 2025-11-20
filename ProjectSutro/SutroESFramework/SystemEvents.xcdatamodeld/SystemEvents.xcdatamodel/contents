@@ -66,6 +66,7 @@
         <relationship name="getextattr" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ESXattrGetEvent"/>
         <relationship name="iokit_open" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ESIOKitOpenEvent"/>
         <relationship name="link" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ESLinkEvent"/>
+        <relationship name="listextattr" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ESXattrListEvent"/>
         <relationship name="login_login" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ESLoginLoginEvent"/>
         <relationship name="lw_session_login" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ESLWLoginEvent"/>
         <relationship name="lw_session_unlock" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ESLWUnlockEvent"/>
@@ -606,6 +607,10 @@
     </entity>
     <entity name="ESXattrGetEvent" representedClassName="ESXattrGetEvent" syncable="YES">
         <attribute name="extattr" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="target" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ESFile"/>
+    </entity>
+    <entity name="ESXattrListEvent" representedClassName="ESXattrListEvent" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="target" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ESFile"/>
     </entity>

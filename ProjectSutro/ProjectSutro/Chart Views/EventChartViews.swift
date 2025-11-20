@@ -23,6 +23,7 @@ struct SystemChartEventView: View {
         "DELETEEXTATTR",
         "SETEXTATTR",
         "GETEXTATTR",
+        "LISTEXTATTR",
         "SETMODE",
         "LAUNCH_ITEM_ADD",
         "LAUNCH_ITEM_REMOVE",
@@ -81,6 +82,9 @@ struct SystemChartEventView: View {
             }
             if message.event.setextattr != nil {
                 counts["SETEXTATTR", default: 0] += 1
+            }
+            if message.event.listextattr != nil {
+                counts["LISTEXTATTR", default: 0] += 1
             }
             if message.event.btm_launch_item_add != nil {
                 counts["LAUNCH_ITEM_ADD", default: 0] += 1

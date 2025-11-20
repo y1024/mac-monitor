@@ -43,6 +43,7 @@ public enum EventType: Hashable, Codable {
     // MARK: File Metadata events
     case setextattr(XattrSetEvent)
     case deleteextattr(XattrDeleteEvent)
+    case listextattr(XattrListEvent)
     case getextattr(XattrGetEvent)
     case setmode(SetModeEvent)
     
