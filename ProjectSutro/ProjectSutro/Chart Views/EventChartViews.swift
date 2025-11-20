@@ -22,6 +22,8 @@ struct SystemChartEventView: View {
         "CREATE",
         "DELETEEXTATTR",
         "SETEXTATTR",
+        "GETEXTATTR",
+        "SETMODE",
         "LAUNCH_ITEM_ADD",
         "LAUNCH_ITEM_REMOVE",
         "OPENSSH_LOGIN",
@@ -59,7 +61,6 @@ struct SystemChartEventView: View {
         "AUTH_JUDGEMENT",
         "TCC_MODIFY",
         "GATEKEEPER_USER_OVERRIDE",
-        "SETMODE",
         "PTY_GRANT",
         "UIPC_CONNECT",
         "UIPC_BIND"
@@ -191,6 +192,10 @@ struct SystemChartEventView: View {
             
             if message.event.pty_grant != nil {
                 counts["PTY_GRANT", default: 0] += 1
+            }
+            
+            if message.event.getextattr != nil {
+                counts["GETEXTATTR", default: 0] += 1
             }
         }
     }
