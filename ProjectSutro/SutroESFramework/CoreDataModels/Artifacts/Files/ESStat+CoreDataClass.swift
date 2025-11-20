@@ -46,7 +46,7 @@ extension ESStat: Encodable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         
-        try container.encode(id, forKey: .id)
+//        try container.encode(id, forKey: .id)
         try container.encode(st_dev, forKey: .st_dev)
         try container.encode(st_blksize, forKey: .st_blksize)
         try container.encode(st_blocks, forKey: .st_blocks)
