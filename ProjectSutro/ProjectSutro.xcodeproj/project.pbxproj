@@ -146,7 +146,7 @@
 		28823F542ECEF7E7000B7F5C /* XattrListEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823F532ECEF7D8000B7F5C /* XattrListEvent.swift */; };
 		28823F572ECEF8E8000B7F5C /* ESXattrListEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823F552ECEF8E8000B7F5C /* ESXattrListEvent+CoreDataClass.swift */; };
 		28823F582ECEF8E8000B7F5C /* ESXattrListEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823F562ECEF8E8000B7F5C /* ESXattrListEvent+CoreDataProperties.swift */; };
-		28823F5B2ED13D5A000B7F5C /* SystemListExtattrMetadataView 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823F5A2ED13D5A000B7F5C /* SystemListExtattrMetadataView 2.swift */; };
+		28823F5D2ED14D5F000B7F5C /* SystemListExtattrMetadataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823F5C2ED14D5F000B7F5C /* SystemListExtattrMetadataView.swift */; };
 		2885A33A29EF99CE001C0420 /* TargetPathEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2885A33929EF99CE001C0420 /* TargetPathEvents.swift */; };
 		28893E2D29A97D3A00960966 /* SystemProcessGroupTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28893E2C29A97D3A00960966 /* SystemProcessGroupTableView.swift */; };
 		288AB3962919BCEF00D221AD /* MutedPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288AB3952919BCEF00D221AD /* MutedPath.swift */; };
@@ -594,7 +594,7 @@
 		28823F532ECEF7D8000B7F5C /* XattrListEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XattrListEvent.swift; sourceTree = "<group>"; };
 		28823F552ECEF8E8000B7F5C /* ESXattrListEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ESXattrListEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
 		28823F562ECEF8E8000B7F5C /* ESXattrListEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ESXattrListEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		28823F5A2ED13D5A000B7F5C /* SystemListExtattrMetadataView 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SystemListExtattrMetadataView 2.swift"; sourceTree = "<group>"; };
+		28823F5C2ED14D5F000B7F5C /* SystemListExtattrMetadataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemListExtattrMetadataView.swift; sourceTree = "<group>"; };
 		2885A33929EF99CE001C0420 /* TargetPathEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetPathEvents.swift; sourceTree = "<group>"; };
 		2889013C28F776E000C1F4A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		28893E2C29A97D3A00960966 /* SystemProcessGroupTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemProcessGroupTableView.swift; sourceTree = "<group>"; };
@@ -1683,7 +1683,7 @@
 		28823F512ECEF7B1000B7F5C /* listextattr */ = {
 			isa = PBXGroup;
 			children = (
-				28823F5A2ED13D5A000B7F5C /* SystemListExtattrMetadataView 2.swift */,
+				28823F5C2ED14D5F000B7F5C /* SystemListExtattrMetadataView.swift */,
 			);
 			path = listextattr;
 			sourceTree = "<group>";
@@ -3594,7 +3594,7 @@
 				BA97AFD22875471D0099C035 /* ContentView.swift in Sources */,
 				284CFE1B2A16F03200D0038B /* PathMutingSettingsView.swift in Sources */,
 				CA7D0EE82E42A07B0024243F /* UpdateAvailableSheet.swift in Sources */,
-				28823F5B2ED13D5A000B7F5C /* SystemListExtattrMetadataView 2.swift in Sources */,
+				28823F5D2ED14D5F000B7F5C /* SystemListExtattrMetadataView.swift in Sources */,
 				28EC62EA29259BB900EAC8AD /* ProcessSystemEventsViews.swift in Sources */,
 				28CEF0E529776BE0003057D2 /* SystemEventJSONView.swift in Sources */,
 				28FFA9B6290F0D0000977D3F /* AgentSettingsView.swift in Sources */,
