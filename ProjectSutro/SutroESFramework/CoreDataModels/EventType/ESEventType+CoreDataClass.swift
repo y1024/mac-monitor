@@ -30,6 +30,7 @@ public class ESEventType: NSManagedObject {
         
         /// Memory mapping events
         case mmap
+        case mprotect
         
         /// File system events
         case create
@@ -45,6 +46,8 @@ public class ESEventType: NSManagedObject {
         
         /// File metadata events
         case setextattr
+        case getextattr
+        case listextattr
         case deleteextattr
         case setmode
         
@@ -179,6 +182,11 @@ public class ESEventType: NSManagedObject {
                 from: message,
                 insertIntoManagedObjectContext: context
             )
+        case .mprotect(_):
+            self.mprotect = ESMProtectEvent(
+                from: message,
+                insertIntoManagedObjectContext: context
+            )
             
             
             // MARK: File System events
@@ -230,6 +238,16 @@ public class ESEventType: NSManagedObject {
             // MARK: File Metadata events
         case .setextattr(_):
             self.setextattr = ESXattrSetEvent(
+                from: message,
+                insertIntoManagedObjectContext: context
+            )
+        case .getextattr(_):
+            self.getextattr = ESXattrGetEvent(
+                from: message,
+                insertIntoManagedObjectContext: context
+            )
+        case .listextattr(_):
+            self.listextattr = ESXattrListEvent(
                 from: message,
                 insertIntoManagedObjectContext: context
             )
@@ -451,6 +469,7 @@ extension ESEventType: Encodable {
         
         // MARK: Memory mapping events
         try container.encodeIfPresent(mmap, forKey: .mmap)
+        try container.encodeIfPresent(mprotect, forKey: .mprotect)
         
         // MARK: File System events
         try container.encodeIfPresent(create, forKey: .create)
@@ -466,6 +485,8 @@ extension ESEventType: Encodable {
         
         // MARK: File Metadata events
         try container.encodeIfPresent(setextattr, forKey: .setextattr)
+        try container.encodeIfPresent(getextattr, forKey: .getextattr)
+        try container.encodeIfPresent(listextattr, forKey: .listextattr)
         try container.encodeIfPresent(deleteextattr, forKey: .deleteextattr)
         try container.encodeIfPresent(setmode, forKey: .setmode)
         

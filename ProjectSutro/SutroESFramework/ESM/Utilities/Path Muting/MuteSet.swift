@@ -18,10 +18,14 @@ public struct MuteSet {
     
     /// Mac Monitor's default mute set
     public static var `default`: MuteSet {
-        // This directory path is calculated at runtime.
+        // The paths for these directories is calculated at runtime
         let caches_dir = String(
             URL(fileURLWithPath: NSHomeDirectory())
                 .appendingPathComponent("Library/Caches").path
+        )
+        let homeLibraryBiomeSteams = String(
+            URL(fileURLWithPath: NSHomeDirectory())
+                .appendingPathComponent("Library/Biome/streams").path
         )
         
         // MARK: - Event-Specific Mute Rules
@@ -30,7 +34,9 @@ public struct MuteSet {
                 "/usr/sbin/cfprefsd",
                 "/usr/libexec/logd",
                 "/System/Library/PrivateFrameworks/PackageKit.framework/Versions/A/Resources/system_installd",
-                "/System/Library/Frameworks/AddressBook.framework/Versions/A/Helpers/AddressBookManager.app/Contents/MacOS/AddressBookManager"
+                "/System/Library/Frameworks/AddressBook.framework/Versions/A/Helpers/AddressBookManager.app/Contents/MacOS/AddressBookManager",
+                "/usr/libexec/mobileassetd",
+                "/usr/libexec/biomesyncd"
             ]),
             (eventType: ES_EVENT_TYPE_NOTIFY_CLOSE, muteType: ES_MUTE_PATH_TYPE_LITERAL, paths: [
                 "/usr/libexec/runningboardd",
@@ -45,7 +51,8 @@ public struct MuteSet {
             ]),
             (eventType: ES_EVENT_TYPE_NOTIFY_RENAME, muteType: ES_MUTE_PATH_TYPE_LITERAL, paths: [
                 "/usr/sbin/cfprefsd",
-                "/usr/libexec/logd"
+                "/usr/libexec/logd",
+                "/usr/libexec/mobileassetd"
             ]),
             (eventType: ES_EVENT_TYPE_NOTIFY_RENAME, muteType: ES_MUTE_PATH_TYPE_TARGET_PREFIX, paths: [caches_dir]),
             (eventType: ES_EVENT_TYPE_NOTIFY_OPEN, muteType: ES_MUTE_PATH_TYPE_PREFIX, paths: [
@@ -99,10 +106,25 @@ public struct MuteSet {
                 "/System/Library/Frameworks/Metal.framework/Versions/A/XPCServices/MTLCompilerService.xpc/Contents/MacOS/MTLCompilerService",
                 "/usr/libexec/knowledge-agent",
                 "/usr/libexec/locationd",
-                "/System/Library/PrivateFrameworks/HelpData.framework/Versions/A/Resources/helpd",
                 "/System/Library/PrivateFrameworks/BiomeStreams.framework/Support/BiomeAgent",
                 "/usr/libexec/xpcproxy",
-                "/usr/libexec/opendirectoryd"
+                "/usr/libexec/opendirectoryd",
+                "/System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged",
+                "/usr/libexec/mobileassetd"
+            ]),
+            (eventType: ES_EVENT_TYPE_NOTIFY_MPROTECT, muteType: ES_MUTE_PATH_TYPE_LITERAL, paths: [
+                "/usr/bin/tailspin",
+                "/usr/libexec/spindump",
+                "/private/var/db/KernelExtensionManagement/KernelCollections/BootKernelCollection.kc",
+                "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared",
+                "/System/Library/Frameworks/Metal.framework/Versions/A/XPCServices/MTLCompilerService.xpc/Contents/MacOS/MTLCompilerService",
+                "/usr/libexec/knowledge-agent",
+                "/usr/libexec/locationd",
+                "/System/Library/PrivateFrameworks/BiomeStreams.framework/Support/BiomeAgent",
+                "/usr/libexec/xpcproxy",
+                "/usr/libexec/opendirectoryd",
+                "/System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged",
+                "/usr/libexec/mobileassetd"
             ]),
             (eventType: ES_EVENT_TYPE_NOTIFY_MMAP, muteType: ES_MUTE_PATH_TYPE_TARGET_PREFIX, paths: [
                 "/Library/Caches/",
@@ -142,7 +164,22 @@ public struct MuteSet {
                 "/System/Library/PrivateFrameworks/CalendarDaemon.framework",
                 "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework"
             ]),
-            (eventType: ES_EVENT_TYPE_NOTIFY_CREATE, muteType: ES_MUTE_PATH_TYPE_TARGET_PREFIX, paths: []),
+            (eventType: ES_EVENT_TYPE_NOTIFY_CREATE, muteType: ES_MUTE_PATH_TYPE_PREFIX, paths: [
+                "/System/Library/PrivateFrameworks/StreamingExtractor.framework"
+            ]),
+            (eventType: ES_EVENT_TYPE_NOTIFY_GETEXTATTR, muteType: ES_MUTE_PATH_TYPE_LITERAL, paths: [
+                "/usr/libexec/runningboardd",
+                "/usr/libexec/containermanagerd",
+                "/System/Library/CoreServices/TimeMachine/backupd"
+            ]),
+            (eventType: ES_EVENT_TYPE_NOTIFY_GETEXTATTR, muteType: ES_MUTE_PATH_TYPE_PREFIX, paths: [
+                "/Library/SystemExtensions/",
+                "/System/Library/PrivateFrameworks/",
+                homeLibraryBiomeSteams
+            ]),
+            (eventType: ES_EVENT_TYPE_NOTIFY_SETMODE, muteType: ES_MUTE_PATH_TYPE_PREFIX, paths: [
+                "/System/Library/PrivateFrameworks/StreamingExtractor.framework"
+            ]),
             (eventType: ES_EVENT_TYPE_NOTIFY_MMAP, muteType: ES_MUTE_PATH_TYPE_PREFIX, paths: [
                 "/Applications/Xcode.app/Contents/SharedFrameworks"
             ]),
@@ -185,7 +222,8 @@ public struct MuteSet {
                 "/usr/sbin/spindump",
                 "/System/Library/PrivateFrameworks/BiomeStreams.framework/Support/BiomeAgent",
                 "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared",
-                "/usr/libexec/duetexpertd"
+                "/usr/libexec/duetexpertd",
+                "/System/Library/PrivateFrameworks/HelpData.framework/Versions/A/Resources/helpd"
             ]),
             (pathType: ES_MUTE_PATH_TYPE_PREFIX, paths: [
                 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain",

@@ -96,6 +96,8 @@ public func eventStringToImage(from eventString: String) -> String {
         return "delete.backward.fill"
     case "ES_EVENT_TYPE_NOTIFY_MMAP":
         return "memorychip"
+    case "ES_EVENT_TYPE_NOTIFY_MPROTECT":
+        return "staroflife.shield"
     case "ES_EVENT_TYPE_NOTIFY_BTM_LAUNCH_ITEM_ADD":
         return "lock.doc"
     case "ES_EVENT_TYPE_NOTIFY_DUP":
@@ -180,6 +182,10 @@ public func eventStringToImage(from eventString: String) -> String {
         return "questionmark.diamond"
     case "ES_EVENT_TYPE_NOTIFY_AUTHORIZATION_JUDGEMENT":
         return "arrowshape.right.fill"
+    case "ES_EVENT_TYPE_NOTIFY_GETEXTATTR":
+        return "text.viewfinder"
+    case "ES_EVENT_TYPE_NOTIFY_LISTEXTATTR":
+        return "list.bullet.indent"
     
     // MARK: - macOS 15+ events
     case "ES_EVENT_TYPE_NOTIFY_TCC_MODIFY":

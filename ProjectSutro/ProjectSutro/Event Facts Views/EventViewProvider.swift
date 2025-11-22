@@ -69,6 +69,13 @@ struct EventSpecificViewsProvider {
         case _ where message.event.mmap != nil:
             self.labelView = AnyView(MMAPEventLabelView(message: message))
             self.metadataView = AnyView(SystemMMAPMetadataView(esSystemEvent: message))
+        case _ where message.event.mprotect != nil:
+            self.labelView = AnyView(
+                IntelligentEventLabelView(message: message)
+            )
+            self.metadataView = AnyView(
+                SystemMProtectMetadataView(esSystemEvent: message)
+            )
             
             
         // MARK: - File System events
@@ -114,10 +121,18 @@ struct EventSpecificViewsProvider {
         case _ where message.event.setextattr != nil:
             self.labelView = AnyView(SetXattrEventLabelView(message: message))
             self.metadataView = AnyView(SystemSetXattrMetadataView(esSystemEvent: message))
+        
+        case _ where message.event.getextattr != nil:
+            self.labelView = AnyView(IntelligentEventLabelView(message: message))
+            self.metadataView = AnyView(SystemGetXattrMetadataView(esSystemEvent: message))
             
         case _ where message.event.deleteextattr != nil:
             self.labelView = AnyView(DeleteXattrEventLabelView(message: message))
             self.metadataView = AnyView(SystemDeleteXattrMetadataView(esSystemEvent: message))
+            
+        case _ where message.event.listextattr != nil:
+            self.labelView = AnyView(IntelligentEventLabelView(message: message))
+            self.metadataView = AnyView(SystemListExtattrMetadataView(esSystemEvent: message))
             
         case _ where message.event.setmode != nil:
             self.labelView = AnyView(SystemEventTypeLabel(message: message))

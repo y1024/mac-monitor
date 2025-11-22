@@ -8,7 +8,7 @@
 import Foundation
 
 
-// https://developer.apple.com/documentation/endpointsecurity/3228936-es_events_t/3228954-setextattr
+// https://developer.apple.com/documentation/endpointsecurity/es_event_setextattr_t
 public struct XattrSetEvent: Identifiable, Codable, Hashable {
     public var id: UUID = UUID()
     

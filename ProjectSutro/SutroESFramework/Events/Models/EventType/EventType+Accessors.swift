@@ -65,6 +65,11 @@ extension EventType {
         return nil
     }
     
+    var mprotect: MProtectEvent? {
+        if case .mprotect(let e) = self { return e }
+        return nil
+    }
+    
     
     // MARK: File System events
     var create: FileCreateEvent? {
@@ -113,6 +118,16 @@ extension EventType {
     // MARK: File Metadata events
     var setextattr: XattrSetEvent? {
         if case .setextattr(let e) = self { return e }
+        return nil
+    }
+    
+    var getextattr: XattrGetEvent? {
+        if case .getextattr(let e) = self { return e }
+        return nil
+    }
+    
+    var listextattr: XattrListEvent? {
+        if case .listextattr(let e) = self { return e }
         return nil
     }
 

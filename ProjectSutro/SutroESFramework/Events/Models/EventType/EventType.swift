@@ -26,6 +26,7 @@ public enum EventType: Hashable, Codable {
     
     // MARK: Memory mapping events
     case mmap(MMapEvent)
+    case mprotect(MProtectEvent)
     
     // MARK: File System events
     case create(FileCreateEvent)
@@ -42,6 +43,8 @@ public enum EventType: Hashable, Codable {
     // MARK: File Metadata events
     case setextattr(XattrSetEvent)
     case deleteextattr(XattrDeleteEvent)
+    case listextattr(XattrListEvent)
+    case getextattr(XattrGetEvent)
     case setmode(SetModeEvent)
     
     // MARK: Pseudoterminal events

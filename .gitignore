@@ -15,3 +15,6 @@ xcuserdata/
 
 # Distribution
 /ProjectSutro/Distribution
+ProjectSutro/build_output.txt
+
+ProjectSutro/build_output_retry.txt
