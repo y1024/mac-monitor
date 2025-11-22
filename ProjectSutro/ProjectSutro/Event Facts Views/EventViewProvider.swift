@@ -130,6 +130,10 @@ struct EventSpecificViewsProvider {
             self.labelView = AnyView(DeleteXattrEventLabelView(message: message))
             self.metadataView = AnyView(SystemDeleteXattrMetadataView(esSystemEvent: message))
             
+        case _ where message.event.listextattr != nil:
+            self.labelView = AnyView(IntelligentEventLabelView(message: message))
+            self.metadataView = AnyView(SystemListExtattrMetadataView(esSystemEvent: message))
+            
         case _ where message.event.setmode != nil:
             self.labelView = AnyView(SystemEventTypeLabel(message: message))
             self.metadataView = AnyView(SystemSetModeMetadataView(esSystemEvent: message))
