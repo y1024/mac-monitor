@@ -125,6 +125,11 @@ extension EventType {
         if case .getextattr(let e) = self { return e }
         return nil
     }
+    
+    var listextattr: XattrListEvent? {
+        if case .listextattr(let e) = self { return e }
+        return nil
+    }
 
     var deleteextattr: XattrDeleteEvent? {
         if case .deleteextattr(let e) = self { return e }

@@ -36,6 +36,7 @@ extension ESEventType {
     
     @NSManaged public var setextattr: ESXattrSetEvent?
     @NSManaged public var getextattr: ESXattrGetEvent?
+    @NSManaged public var listextattr: ESXattrListEvent?
     @NSManaged public var deleteextattr: ESXattrDeleteEvent?
     @NSManaged public var setmode: ESSetModeEvent?
     

@@ -143,6 +143,10 @@
 		28823F482ECC2CB3000B7F5C /* ESXattrGetEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823F462ECC2CB3000B7F5C /* ESXattrGetEvent+CoreDataClass.swift */; };
 		28823F492ECC2CB3000B7F5C /* ESXattrGetEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823F472ECC2CB3000B7F5C /* ESXattrGetEvent+CoreDataProperties.swift */; };
 		28823F502ECC3400000B7F5C /* SystemGetExtattrMetadataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823F4F2ECC3400000B7F5C /* SystemGetExtattrMetadataView.swift */; };
+		28823F542ECEF7E7000B7F5C /* XattrListEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823F532ECEF7D8000B7F5C /* XattrListEvent.swift */; };
+		28823F572ECEF8E8000B7F5C /* ESXattrListEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823F552ECEF8E8000B7F5C /* ESXattrListEvent+CoreDataClass.swift */; };
+		28823F582ECEF8E8000B7F5C /* ESXattrListEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823F562ECEF8E8000B7F5C /* ESXattrListEvent+CoreDataProperties.swift */; };
+		28823F5D2ED14D5F000B7F5C /* SystemListExtattrMetadataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823F5C2ED14D5F000B7F5C /* SystemListExtattrMetadataView.swift */; };
 		2885A33A29EF99CE001C0420 /* TargetPathEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2885A33929EF99CE001C0420 /* TargetPathEvents.swift */; };
 		28893E2D29A97D3A00960966 /* SystemProcessGroupTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28893E2C29A97D3A00960966 /* SystemProcessGroupTableView.swift */; };
 		288AB3962919BCEF00D221AD /* MutedPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288AB3952919BCEF00D221AD /* MutedPath.swift */; };
@@ -587,6 +591,10 @@
 		28823F462ECC2CB3000B7F5C /* ESXattrGetEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ESXattrGetEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
 		28823F472ECC2CB3000B7F5C /* ESXattrGetEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ESXattrGetEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		28823F4F2ECC3400000B7F5C /* SystemGetExtattrMetadataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemGetExtattrMetadataView.swift; sourceTree = "<group>"; };
+		28823F532ECEF7D8000B7F5C /* XattrListEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XattrListEvent.swift; sourceTree = "<group>"; };
+		28823F552ECEF8E8000B7F5C /* ESXattrListEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ESXattrListEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
+		28823F562ECEF8E8000B7F5C /* ESXattrListEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ESXattrListEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		28823F5C2ED14D5F000B7F5C /* SystemListExtattrMetadataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemListExtattrMetadataView.swift; sourceTree = "<group>"; };
 		2885A33929EF99CE001C0420 /* TargetPathEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetPathEvents.swift; sourceTree = "<group>"; };
 		2889013C28F776E000C1F4A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		28893E2C29A97D3A00960966 /* SystemProcessGroupTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemProcessGroupTableView.swift; sourceTree = "<group>"; };
@@ -1672,6 +1680,31 @@
 			path = getextattr;
 			sourceTree = "<group>";
 		};
+		28823F512ECEF7B1000B7F5C /* listextattr */ = {
+			isa = PBXGroup;
+			children = (
+				28823F5C2ED14D5F000B7F5C /* SystemListExtattrMetadataView.swift */,
+			);
+			path = listextattr;
+			sourceTree = "<group>";
+		};
+		28823F522ECEF7D2000B7F5C /* listextattr */ = {
+			isa = PBXGroup;
+			children = (
+				28823F532ECEF7D8000B7F5C /* XattrListEvent.swift */,
+			);
+			path = listextattr;
+			sourceTree = "<group>";
+		};
+		28823F592ECEF8FE000B7F5C /* listextattr */ = {
+			isa = PBXGroup;
+			children = (
+				28823F552ECEF8E8000B7F5C /* ESXattrListEvent+CoreDataClass.swift */,
+				28823F562ECEF8E8000B7F5C /* ESXattrListEvent+CoreDataProperties.swift */,
+			);
+			path = listextattr;
+			sourceTree = "<group>";
+		};
 		28A169CE2DA4E56600CA630B /* Artifacts */ = {
 			isa = PBXGroup;
 			children = (
@@ -1821,6 +1854,7 @@
 		28B343742D862E1C004127E8 /* File Metadata Events */ = {
 			isa = PBXGroup;
 			children = (
+				28823F592ECEF8FE000B7F5C /* listextattr */,
 				28823F4D2ECC2CF9000B7F5C /* setmode */,
 				28823F4C2ECC2CF0000B7F5C /* deleteextattr */,
 				28823F4B2ECC2CE6000B7F5C /* setextattr */,
@@ -2130,6 +2164,7 @@
 		28B343972D863C63004127E8 /* File Metadata Events */ = {
 			isa = PBXGroup;
 			children = (
+				28823F522ECEF7D2000B7F5C /* listextattr */,
 				28823F432ECC2B83000B7F5C /* getextattr */,
 				CA9C06242E907D7600A0D5C8 /* setextattr */,
 				CA9C06232E907D6F00A0D5C8 /* deleteextattr */,
@@ -2889,6 +2924,7 @@
 		CAC48AFA2E25DBCD00260C5F /* File Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				28823F512ECEF7B1000B7F5C /* listextattr */,
 				28823F4E2ECC33EC000B7F5C /* getextattr */,
 				28823F422ECC2AAB000B7F5C /* setmode */,
 				28823F3F2ECC2A6E000B7F5C /* deleteextattr */,
@@ -3313,6 +3349,7 @@
 				28B343AD2D87740D004127E8 /* ESAuditToken+CoreDataClass.swift in Sources */,
 				28B343AE2D87740D004127E8 /* ESAuditToken+CoreDataProperties.swift in Sources */,
 				CAD3D9822E0F167300028111 /* ESFileDestination+CoreDataClass.swift in Sources */,
+				28823F542ECEF7E7000B7F5C /* XattrListEvent.swift in Sources */,
 				282E64EA28FA69760060ABFA /* RCXPC.swift in Sources */,
 				282744AA28EF75F400464C5B /* Message.swift in Sources */,
 				2852BBB629DB756900AA833C /* ESCodeSignatureInvalidatedEvent+CoreDataClass.swift in Sources */,
@@ -3429,6 +3466,8 @@
 				28EC62D8292446B700EAC8AD /* ESFileCreateEvent+CoreDataProperties.swift in Sources */,
 				280C78D22E8DE33700B172E5 /* ESUIPCBindEvent+CoreDataClass.swift in Sources */,
 				280C78D32E8DE33700B172E5 /* ESUIPCBindEvent+CoreDataProperties.swift in Sources */,
+				28823F572ECEF8E8000B7F5C /* ESXattrListEvent+CoreDataClass.swift in Sources */,
+				28823F582ECEF8E8000B7F5C /* ESXattrListEvent+CoreDataProperties.swift in Sources */,
 				28CEF1172978CBF1003057D2 /* ESLWLoginEvent+CoreDataProperties.swift in Sources */,
 				2852BBC529DB9E3700AA833C /* ProcessTraceEvent.swift in Sources */,
 				284BAEC32A4CAEEE007F1193 /* AuthorizationJudgementEvent.swift in Sources */,
@@ -3555,6 +3594,7 @@
 				BA97AFD22875471D0099C035 /* ContentView.swift in Sources */,
 				284CFE1B2A16F03200D0038B /* PathMutingSettingsView.swift in Sources */,
 				CA7D0EE82E42A07B0024243F /* UpdateAvailableSheet.swift in Sources */,
+				28823F5D2ED14D5F000B7F5C /* SystemListExtattrMetadataView.swift in Sources */,
 				28EC62EA29259BB900EAC8AD /* ProcessSystemEventsViews.swift in Sources */,
 				28CEF0E529776BE0003057D2 /* SystemEventJSONView.swift in Sources */,
 				28FFA9B6290F0D0000977D3F /* AgentSettingsView.swift in Sources */,

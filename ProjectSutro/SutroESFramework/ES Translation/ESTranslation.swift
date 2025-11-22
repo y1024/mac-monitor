@@ -184,6 +184,8 @@ public func eventStringToImage(from eventString: String) -> String {
         return "arrowshape.right.fill"
     case "ES_EVENT_TYPE_NOTIFY_GETEXTATTR":
         return "text.viewfinder"
+    case "ES_EVENT_TYPE_NOTIFY_LISTEXTATTR":
+        return "list.bullet.indent"
     
     // MARK: - macOS 15+ events
     case "ES_EVENT_TYPE_NOTIFY_TCC_MODIFY":

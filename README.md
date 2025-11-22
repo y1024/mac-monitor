@@ -3,6 +3,11 @@
 
 Mac Monitor is an **advanced, stand-alone system monitoring tool tailor-made for macOS security research, malware triage, and system troubleshooting**. Leveraging Apple's Endpoint Security (ES) and System Extension APIs, it collects and enriches system events, displaying them graphically, with an expansive feature set designed to surface only the events that are relevant to you. The telemetry collected includes process, interprocess, memory, XPC, file events, and more in addition to rich metadata, allowing users to contextualize events and tell a story with ease. With an intuitive interface and a rich set of analysis features, Mac Monitor was designed for a wide range of skill levels and backgrounds to detect macOS threats that would otherwise go unnoticed. 
 
+### OBTS v8.0 Presentation
+**Introducing the Next Generation of Mac Monitor**:
+* [📊 Slides](https://swiftlydetecting-conferences.s3.us-west-2.amazonaws.com/public/2025/OBTSv8/Introducing+the+Next+Generation+of+Mac+Monitor.pdf)
+* [📺 YouTube](https://www.youtube.com/watch?v=h_i_H6RzzHA)
+
 
 ## Requirements
 - Processor: We recommend an `Apple Silicon` machine, but `Intel` works too!
